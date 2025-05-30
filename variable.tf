@@ -22,7 +22,7 @@ variable "region" {
 
 # }
 
-variable "ecr_repositry_name" {
+variable "ecr_repository_name" {
   description = "ECR repositry name"
   default     = "ecr-project-repo"
 
