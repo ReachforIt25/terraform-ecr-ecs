@@ -17,7 +17,7 @@ resource "aws_ecs_service" "service" {
   network_configuration {
     assign_public_ip = true
     security_groups  = [aws_security_group.sg.id]
-    subnets          = [aws_subnet.sub1.id]
+    subnets          = [aws_subnet.sub1.id, aws_subnet.sub2.id ]
   }
 }
 
@@ -33,8 +33,8 @@ resource "aws_ecs_task_definition" "task" {
       essential = true
       portMappings = [
         {
-          containerPort = 80
-          hostPort      = 80
+          containerPort = 5001
+          hostPort      = 5001
         }
       ]
     }
